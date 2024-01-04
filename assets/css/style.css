@@ -48,9 +48,11 @@
 
 
 .logo{
-  font-size: xx-large;
+  font-size: x-large;
   font-weight:bolder;
   color: #10285d;
+
+  text-wrap: nowrap;
 }
 
 .logo:hover{
@@ -73,6 +75,19 @@
 }
 .full{
   width: inherit;
+}
+
+.mtop{
+  margin-top: -200px;
+}
+.full2{
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* line 63, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_color.scss */
