@@ -68,14 +68,20 @@
   color: white;
 }
 .rad{
-  border-radius: 80px;
-  width: 180px;
-  height: 150px;
+  border-radius: 85px;
+
+}
+.full{
+  width: inherit;
 }
 
 /* line 63, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_color.scss */
 .white-bg {
   background: #ffffff;
+}
+
+.loderr{
+  border-radius: 75px;
 }
 
 /* line 66, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_color.scss */
