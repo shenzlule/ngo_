@@ -160,22 +160,22 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message"></textarea>
+                                        <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" required placeholder=" Enter Message"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
+                                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" required placeholder="Enter your name">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" required placeholder="Email">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
+                                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" required placeholder="Enter Subject">
                                     </div>
                                 </div>
                             </div>
@@ -364,25 +364,31 @@
             // Get the form element
             var form = document.getElementById('myForm');
 
-            // Use the fetch API to submit the form data
-            fetch(form.action, {
-                method: form.method,
-                body: new FormData(form)
-            })
-            .then(response => {
-                // Handle the response here, you may want to check for success
-                if (response.ok) {
-                    // Reset the form to its default values
-                    form.reset();
-                    alert("Sent Successfully")
-                } else {
-                    // Handle the error or provide feedback to the user
-                    console.error('Form submission failed');
-                }
-            })
-            .catch(error => {
-                console.error('Error during form submission:', error);
-            });
+            // Check if the form is valid
+            if (form.checkValidity()) {
+                // Use the fetch API to submit the form data
+                fetch(form.action, {
+                    method: form.method,
+                    body: new FormData(form)
+                })
+                .then(response => {
+                    // Handle the response here, you may want to check for success
+                    if (response.ok) {
+                        // Reset the form to its default values
+                        form.reset();
+                        alert('Form submitted successfully!');
+                    } else {
+                        // Handle the error or provide feedback to the user
+                        console.error('Form submission failed');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error during form submission:', error);
+                });
+            } else {
+                // If the form is not valid, you may want to provide feedback to the user
+                alert('Please fill in all required fields before submitting.');
+            }
         }
     </script>
     </body>
