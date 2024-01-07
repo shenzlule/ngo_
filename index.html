@@ -6,7 +6,7 @@
     <title>Derrine Charity Foundation</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="site.webmanifest">
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
 
 	<!-- CSS here -->
@@ -304,7 +304,7 @@
             <!-- Testimonial contents -->
             <div class="row d-flex justify-content-center">
                 <div class="col-xl-8 col-lg-8 col-md-10">
-                    <div class="h1-testimonial-active dot-style">
+                    <div class="dot-style autoplay">
                         <!-- Single Testimonial -->
                         <div class="single-testimonial text-center">
                             <div class="testimonial-caption ">
@@ -673,6 +673,19 @@
     <!-- Jquery Slick , Owl-Carousel Plugins -->
     <script src="./assets/js/owl.carousel.min.js"></script>
      <script src="./assets/js/slick.min.js"></script> 
+    
+    
+     <script>
+        $('.autoplay').slick({
+   slidesToShow: 1,
+   slidesToScroll: 1,
+   autoplay: true,
+   autoplaySpeed: 3000,
+   arrows: false,
+   dots: true
+ 
+ });
+       </script>
     <!-- <script>
         $(document).ready(function(){
           $('.h1-testimonial-active').slick({
@@ -712,6 +725,7 @@
     <!-- Jquery Plugins, main Jquery -->	
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
+    
     
     </body>
 </html>
